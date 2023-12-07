@@ -32,6 +32,10 @@ input {
   border-radius: 3px;
 }
 
+p {
+  padding: 3px;
+}
+
 #main-container {
   display: flex;
   justify-content: flex-start;
@@ -58,7 +62,7 @@ input {
 #instructions {
   text-align: center;
   font-size: 1.8rem;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .green-btn {
