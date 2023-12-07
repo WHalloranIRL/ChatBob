@@ -52,7 +52,6 @@ input {
 #chat {
   text-align: center;
   font-weight: 600;
-  border: var(--test-border);
 }
 
 .green-btn {
@@ -69,10 +68,13 @@ input {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  border: 1px solid hotpink;
 }
 
 .emoji img {
   width: 150px;
   height: auto;
+}
+
+.hide {
+  display: none;
 }
