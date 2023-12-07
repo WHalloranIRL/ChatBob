@@ -45,7 +45,11 @@ body {
 
 #chat {
   text-align: center;
+  font-weight: 600;
   border: var(--test-border);
+}
+
+.green-btn {
 }
 
 .emoji {
