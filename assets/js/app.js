@@ -53,18 +53,42 @@ const greeting = () => {
   }
 };
 
+// functions to terminate app when users selects no to both possible options
 const gameNo = () => {
   chatDiv.textContent = `AAAAAhhhhhh ${userNameInput.value} thats a pity, would you like to hear a joke ?`;
   instructionsDiv.textContent = "";
   //   noBtn.removeEventListener("click", gameNo);
   noBtn.addEventListener("click", noJoke);
   emojisPicture.innerHTML = emojiObj.sad;
+  yesBtn.addEventListener("click", randomJoke);
 };
 
 const noJoke = () => {
   chatDiv.textContent = `No problem ${userNameInput.value}, maybe next time!`;
   emojisPicture.innerHTML = emojiObj.goodbye;
   controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
+};
+
+//functions for when a users selects yes to either possible options
+
+// random joke generator
+const randomJoke = () => {
+  const randJokes = [
+    "My wife said I should do lunges to stay in shape. That would be a big step forward",
+    "A thief stole all the fruit from the house, I couldn't believe it, I was peachless",
+    "What did the ocean say to the beach? Nothing, it just waved.",
+    "Why don't eggs tell jokes? They'd crack each other up.",
+    "Why can't your hand be 12 inches long? Because then it would be a foot.",
+  ];
+
+  let displayJoke = randJokes[Math.floor(Math.random() * randJokes.length)];
+  emojisPicture.innerHTML = emojiObj.cryinglol;
+  chatDiv.textContent = `Here's one for you !`;
+  gameDiv.innerHTML = `<p>${displayJoke}<p>
+    <p>Would you like to hear another one?</p>`;
+
+  yesBtn.addEventListener("click", randomJoke);
+  noBtn.addEventListener("click", noJoke);
 };
 
 // Event listeners
