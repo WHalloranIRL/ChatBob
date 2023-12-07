@@ -26,6 +26,12 @@ body {
   font-size: 2rem;
 }
 
+input {
+  padding: 0.5rem;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+}
+
 #main-container {
   display: flex;
   justify-content: flex-start;
@@ -56,6 +62,7 @@ body {
   border-radius: 3px;
   background-color: rgba(144, 238, 144, 0.6);
   min-width: 6rem;
+  cursor: pointer;
 }
 
 .emoji {
