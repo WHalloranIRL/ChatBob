@@ -53,5 +53,16 @@ const greeting = () => {
   }
 };
 
+const gameNo = () => {
+  chatDiv.textContent = `AAAAAhhhhhh ${userNameInput.value} thats a pity, would you like to hear a joke ?`;
+  instructionsDiv.textContent = "";
+  //   noBtn.removeEventListener("click", gameNo);
+  noBtn.addEventListener("click", noJoke);
+  noBtn.removeEventListener("click", noJoke);
+};
+
+const noJoke = () => {};
+
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
+noBtn.addEventListener("click", gameNo);
