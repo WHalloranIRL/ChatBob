@@ -11,7 +11,7 @@ This is a simple gaming site for users to have some fun, interacting and playing
 ## Roadmap
 
 - Create frontend and emoji character
-- Create form to capture user info 
+- Create form to capture user info
 - Create games
 - Create jokes
 - Create interactivity for users to access games and play
@@ -26,7 +26,7 @@ This is a simple gaming site for users to have some fun, interacting and playing
 - Clear and quality images
 - Easily navigatable
 - Positive feedback from Bob
-- 
+-
 
 ### User Story
 
@@ -76,7 +76,6 @@ I am choosing JS to help create the page based on user interaction and hide/show
 
 Using Figma I have created initially the mobile first look and feel then scaled based on larger screen requirements
 
-
 ## Features
 
 ### Navigation
@@ -114,14 +113,13 @@ Using Figma I have created initially the mobile first look and feel then scaled 
 Testing was completed on multiple devices for resposiveness. All links and possible click throughs were also tested.
 
 | Feature | Description | Steps | Outcome |
-| --- | --- | --- | --- |
-
+| ------- | ----------- | ----- | ------- |
 
 ## Bugs
 
 | Bug | Status | Description | Steps To Resolve |
 | --- | --- | --- | --- |
-
+| Invalid Instructions | Resolved | On clicking the Yes for game choice, old instructions were being delivered | Set the instructionsDiv class to hide |
 
 ## Deployment
 
