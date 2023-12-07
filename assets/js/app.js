@@ -18,19 +18,20 @@ const emojisPicture = document.querySelector("#emojis");
 
 // creating emojis object list
 const emojiObj = {
-    happy: createEmoji("1f600", "😀"),
-    sad: createEmoji("1f61e", "😞"),
-    excited: createEmoji("1f973", "🥳"),
-    cryinglol: createEmoji("1f923", "🤣"),
-    goodbye: createEmoji("1fae1", "🫡"),
-    grinning: createEmoji("1f601", "😁"),
-  };
-  
-  //function for creating emoji urls
-  function createEmoji(code, alt) {
-    return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
+  happy: createEmoji("1f600", "😀"),
+  sad: createEmoji("1f61e", "😞"),
+  excited: createEmoji("1f973", "🥳"),
+  cryinglol: createEmoji("1f923", "🤣"),
+  goodbye: createEmoji("1fae1", "🫡"),
+  grinning: createEmoji("1f601", "😁"),
+  hug: createEmoji("1f917", "🤗"),
+};
+
+//function for creating emoji urls
+function createEmoji(code, alt) {
+  return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
       <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif" alt="${alt}">`;
-  }
+}
 
 // function for checking userNameInput has been correctly entered
 const greeting = () => {
@@ -49,7 +50,10 @@ const greeting = () => {
     gameDiv.classList.remove("hide");
 
     //clear instructionsDiv text
-    instructionsDiv.textContent = "";
+    instructionsDiv.innerHTML = `<p>Would you like to play a game ? It's easy you can just click Yes or No below</p>`;
+
+    //set emoji
+    emojisPicture.innerHTML = emojiObj.hug;
   }
 };
 
