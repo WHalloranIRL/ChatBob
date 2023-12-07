@@ -16,6 +16,22 @@ const userInputBtn = document.querySelector("#user-input-btn");
 // selecting the emojis picture element
 const emojisPicture = document.querySelector("#emojis");
 
+// creating emojis object list
+const emojiObj = {
+    happy: createEmoji("1f600", "😀"),
+    sad: createEmoji("1f61e", "😞"),
+    excited: createEmoji("1f973", "🥳"),
+    cryinglol: createEmoji("1f923", "🤣"),
+    goodbye: createEmoji("1fae1", "🫡"),
+    grinning: createEmoji("1f601", "😁"),
+  };
+  
+  //function for creating emoji urls
+  function createEmoji(code, alt) {
+    return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
+      <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif" alt="${alt}">`;
+  }
+
 // function for checking userNameInput has been correctly entered
 const greeting = () => {
   if (userNameInput.value == "") {
