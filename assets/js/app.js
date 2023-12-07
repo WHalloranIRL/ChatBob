@@ -16,8 +16,6 @@ const userInputBtn = document.querySelector("#user-input-btn");
 // selecting the emojis picture element
 const emojisPicture = document.querySelector("#emojis");
 // selecting control buttons
-const yesBtn = document.querySelector(".green-btn");
-const noBtn = document.querySelector(".red-btn");
 const yesGameControlsBtn = document.querySelector("#yes");
 const noGameControlsBtn = document.querySelector("#no");
 
@@ -60,7 +58,7 @@ const gameNo = () => {
   chatDiv.textContent = `AAAAAhhhhhh ${userNameInput.value} thats a pity, would you like to hear a joke ?`;
   instructionsDiv.textContent = "";
   //   noBtn.removeEventListener("click", gameNo);
-  noBtn.addEventListener("click", noJoke);
+  noGameControlsBtn.addEventListener("click", noJoke);
   emojisPicture.innerHTML = emojiObj.sad;
   yesGameControlsBtn.addEventListener("click", randomJoke);
 };
@@ -69,6 +67,7 @@ const noJoke = () => {
   chatDiv.textContent = `No problem ${userNameInput.value}, maybe next time!`;
   emojisPicture.innerHTML = emojiObj.goodbye;
   controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
+  gameSection.classList.add("hide");
 };
 
 //functions for when a users selects yes to either possible options
