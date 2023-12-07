@@ -32,6 +32,16 @@ input {
   border-radius: 3px;
 }
 
+button {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+  min-width: 6rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 p {
   padding: 3px;
 }
@@ -56,7 +66,6 @@ p {
 #chat {
   text-align: center;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 #instructions {
@@ -66,13 +75,13 @@ p {
 }
 
 .green-btn {
-  padding: 0.5rem;
-  margin-top: 1rem;
-  border: 1px solid lightblue;
-  border-radius: 3px;
-  background-color: rgba(144, 238, 144, 0.6);
-  min-width: 6rem;
-  cursor: pointer;
+  background-color: rgba(144, 238, 144, 0.5);
+  color: green;
+}
+
+.red-btn {
+  background-color: rgba(236, 29, 6, 0.326);
+  color: red;
 }
 
 .emoji {

@@ -8,11 +8,14 @@
     <title>ChatBob</title>
   </head>
   <body>
-    <header id="header" class="hide"><h1>Chat Bob</h1></header>
+    <header id="header" class="hide">
+      <h1>Chat Bob</h1>
+    </header>
+
     <main id="main">
       <div id="main-container">
         <section id="emoji-section">
-          <div class="emoji">
+          <div id="emoji" class="emoji">
             <picture id="emojis">
               <source
                 srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f600/512.webp"
@@ -29,7 +32,7 @@
               <label for="user-name-input"></label>
               <input id="user-name-input" type="text" class="user-name-input" />
               <!-- <input type="button" class="green-btn" value="Tell Me" /> -->
-              <button class="green-btn">Tell Me!</button>
+              <button id="user-input-btn" class="green-btn">Tell Me!</button>
             </p>
           </div>
         </section>
@@ -43,11 +46,13 @@
             <p>To get started simply tell Bob your name!</p>
           </div>
         </section>
+
         <section id="game-section" class="hide">
-          <p>Games</p>
+          <div id="game"></div>
         </section>
+
         <section id="controls-section" class="hide">
-          <p>Controls</p>
+          <div id="controls"></div>
         </section>
       </div>
     </main>
