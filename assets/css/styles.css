@@ -16,7 +16,10 @@ html {
 }
 
 body {
-  background-color: blue;
+  height: 100vh;
+  background: rgb(41, 41, 190);
+  background: linear-gradient(180deg, rgba(41, 41, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  background-repeat: no-repeat;
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 2rem;
