@@ -18,6 +18,8 @@ const emojisPicture = document.querySelector("#emojis");
 // selecting control buttons
 const yesBtn = document.querySelector(".green-btn");
 const noBtn = document.querySelector(".red-btn");
+const yesGameControlsBtn = document.querySelector("#yes");
+const noGameControlsBtn = document.querySelector("#no");
 
 // creating emojis object list
 const emojiObj = {
@@ -60,7 +62,7 @@ const gameNo = () => {
   //   noBtn.removeEventListener("click", gameNo);
   noBtn.addEventListener("click", noJoke);
   emojisPicture.innerHTML = emojiObj.sad;
-  yesBtn.addEventListener("click", randomJoke);
+  yesGameControlsBtn.addEventListener("click", randomJoke);
 };
 
 const noJoke = () => {
@@ -84,13 +86,14 @@ const randomJoke = () => {
   let displayJoke = randJokes[Math.floor(Math.random() * randJokes.length)];
   emojisPicture.innerHTML = emojiObj.cryinglol;
   chatDiv.textContent = `Here's one for you !`;
+  gameSection.classList.remove("hide");
   gameDiv.innerHTML = `<p>${displayJoke}<p>
     <p>Would you like to hear another one?</p>`;
 
-  yesBtn.addEventListener("click", randomJoke);
-  noBtn.addEventListener("click", noJoke);
+  yesGameControlsBtn.addEventListener("click", randomJoke);
+  noGameControlsBtn.addEventListener("click", noJoke);
 };
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
-noBtn.addEventListener("click", gameNo);
+noGameControlsBtn.addEventListener("click", gameNo);
