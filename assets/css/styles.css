@@ -68,6 +68,7 @@ p {
   font-weight: 600;
 }
 
+#controls,
 #instructions {
   text-align: center;
   font-size: 1.8rem;

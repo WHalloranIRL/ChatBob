@@ -39,20 +39,13 @@ const greeting = () => {
     let pFirstChild = chatDiv.firstElementChild;
     pFirstChild.textContent = `Oh I didn't get your name!`;
   } else {
-    // set the text in the chatDiv to equal the value of the name provided
+    //settings content and unhiding sections
     chatDiv.textContent = `Hi ${userNameInput.value}, nice to meet you !`;
-
-    // remove both the input & buttons from the DOM
     userNameInput.remove();
     userInputBtn.remove();
-
-    // removing .hide class from gameDiv to display it
     gameDiv.classList.remove("hide");
-
-    //clear instructionsDiv text
+    controlsSection.classList.remove("hide");
     instructionsDiv.innerHTML = `<p>Would you like to play a game ? It's easy you can just click Yes or No below</p>`;
-
-    //set emoji
     emojisPicture.innerHTML = emojiObj.hug;
   }
 };
