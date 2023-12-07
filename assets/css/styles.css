@@ -24,3 +24,20 @@ body {
   font-weight: 300;
   font-size: 2rem;
 }
+
+#main-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  width: 85vw;
+  height: auto;
+  border: 2px solid rgba(173, 216, 230, 0.5);
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  box-shadow: 1px 6px 6px -1px rgba(100, 100, 100, 0.75);
+}
