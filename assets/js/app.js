@@ -19,7 +19,7 @@ const emojisPicture = document.querySelector("#emojis");
 const yesGameControlsBtn = document.querySelector("#yes");
 const noGameControlsBtn = document.querySelector("#no");
 
-// creating emojis object list
+// creating emojis object list & urls for emojis
 const emojiObj = {
   happy: createEmoji("1f600", "😀"),
   sad: createEmoji("1f61e", "😞"),
@@ -30,7 +30,6 @@ const emojiObj = {
   hug: createEmoji("1f917", "🤗"),
 };
 
-//function for creating emoji urls
 function createEmoji(code, alt) {
   return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
       <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif" alt="${alt}">`;
