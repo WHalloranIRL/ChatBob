@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap");
 
 :root {
   --white: #fffffff;
@@ -22,7 +22,7 @@ body {
   background: linear-gradient(180deg, rgba(41, 41, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
   background-repeat: no-repeat;
   font-family: "Quicksand", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 2rem;
 }
 
@@ -84,4 +84,9 @@ input {
 
 .hide {
   display: none;
+}
+
+.first-word {
+  font-weight: 600;
+  color: red;
 }
