@@ -41,3 +41,14 @@ body {
   background-color: whitesmoke;
   box-shadow: 1px 6px 6px -1px rgba(100, 100, 100, 0.75);
 }
+
+.emoji {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.emoji img {
+  width: 150px;
+  height: auto;
+}
