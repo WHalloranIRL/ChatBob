@@ -58,10 +58,13 @@ const gameNo = () => {
   instructionsDiv.textContent = "";
   //   noBtn.removeEventListener("click", gameNo);
   noBtn.addEventListener("click", noJoke);
-  noBtn.removeEventListener("click", noJoke);
 };
 
-const noJoke = () => {};
+const noJoke = () => {
+  chatDiv.textContent = `No problem ${userInputBtn.value}, maybe next time!`;
+  emojisPicture.innerHTML = emojiObj.goodbye;
+  controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn" value="Home"></button>`;
+};
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
