@@ -15,6 +15,9 @@ const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
 // selecting the emojis picture element
 const emojisPicture = document.querySelector("#emojis");
+// selecting control buttons
+const yesBtn = document.querySelector(".green-btn");
+const noBtn = document.querySelector(".red-btn");
 
 // creating emojis object list
 const emojiObj = {
