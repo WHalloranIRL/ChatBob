@@ -2,6 +2,7 @@
 
 :root {
   --white: #fffffff;
+  --test-border: 1px solid hotpink;
 }
 
 * {
@@ -42,10 +43,16 @@ body {
   box-shadow: 1px 6px 6px -1px rgba(100, 100, 100, 0.75);
 }
 
+#chat {
+  text-align: center;
+  border: var(--test-border);
+}
+
 .emoji {
   display: flex;
   justify-content: center;
   padding: 1rem;
+  border: 1px solid hotpink;
 }
 
 .emoji img {
