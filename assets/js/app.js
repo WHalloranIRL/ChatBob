@@ -92,6 +92,15 @@ const randomJoke = () => {
   noGameControlsBtn.addEventListener("click", noJoke);
 };
 
+const gameYes = () => {
+  chatDiv.textContent = "Unreal! Ok so I've for a few to choose from, I love games";
+  instructionSection.textContent = "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
+  controlsSection.innerHTML = `<button id="quiz" class="green-btn">Quiz</button>
+  <button id="rps" class="green-btn">RPS</button>
+  <button id="hilo" class="green-btn">Hi-Lo</button>`;
+};
+
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
+yesGameControlsBtn.addEventListener("click", gameYes);
 noGameControlsBtn.addEventListener("click", gameNo);
