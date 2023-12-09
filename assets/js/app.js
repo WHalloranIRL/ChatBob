@@ -49,6 +49,8 @@ const greeting = () => {
     controlsSection.classList.remove("hide");
     instructionsDiv.innerHTML = `<p>Would you like to play a game ? It's easy you can just click Yes or No below</p>`;
     emojisPicture.innerHTML = emojiObj.hug;
+
+    yesGameControlsBtn.addEventListener("click", gameYes);
   }
 };
 
@@ -85,6 +87,7 @@ const randomJoke = () => {
   emojisPicture.innerHTML = emojiObj.cryinglol;
   chatDiv.textContent = `Here's one for you !`;
   gameSection.classList.remove("hide");
+  instructionSection.classList.add("hide");
   gameDiv.innerHTML = `<p>${displayJoke}<p>
     <p>Would you like to hear another one?</p>`;
 
@@ -104,5 +107,4 @@ const gameYes = () => {
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
-yesGameControlsBtn.addEventListener("click", gameYes);
 noGameControlsBtn.addEventListener("click", gameNo);
