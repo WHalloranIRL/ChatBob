@@ -121,6 +121,7 @@ const randomJoke = () => {
 const rps = () => {
   gameSection.classList.remove("hide");
   rpsDiv.classList.remove("hide");
+  gameChoiceBtns.classList.add("hide");
   controlsDiv.classList.add("hide");
   instructionsDiv.textContent =
     "You need to click on one of the buttons below to make your choice, first to 10 wins";
@@ -149,15 +150,16 @@ const rps = () => {
       bobScore++;
     }
 
-    console.log(playerScore, bobScore);
-
     // Check if either player or Bob has reached a score of 10
-    if (playerScore < 10 && bobScore < 10) {
+    if (playerScore <= 10 && bobScore <= 10) {
       updateScores();
       displayResult(playerChoice, computerChoice, result);
     } else {
       console.log("Game Over");
       rpsDiv.classList.add("hide");
+      controlsDiv.classList.remove("hide");
+      noGameControlsBtn.setAttribute("data-function", "joke-no");
+      yesGameControlsBtn.setAttribute("data-function", "rps-again");
 
       // Check who has the higher score and display the outcome
       if (playerScore > bobScore) {
@@ -186,7 +188,6 @@ const rps = () => {
   }
 
   function displayResult(player, computer, result) {
-    //const outcomeElement = document.getElementById("outcome");
     outcomeElement.textContent = `You chose ${player}. Bob chose ${computer}. ${result}`;
   }
 
@@ -220,6 +221,9 @@ yesGameControlsBtn.addEventListener("click", function () {
       break;
     case "joke-yes":
       randomJoke();
+      break;
+    case "rps-again":
+      rps();
       break;
     default:
       console.log("Do nothing");
