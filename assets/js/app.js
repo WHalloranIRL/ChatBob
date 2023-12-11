@@ -116,7 +116,6 @@ const randomJoke = () => {
 //games section
 
 const rps = () => {
-  console.log("This is RPS");
   gameSection.classList.remove("hide");
   rpsDiv.classList.remove("hide");
   controlsDiv.classList.add("hide");
@@ -143,10 +142,8 @@ const rps = () => {
 
     if (result === "You win!") {
       playerScore++;
-      console.log(playerScore);
     } else if (result === "Bob wins!") {
       bobScore++;
-      console.log(bobScore);
     }
 
     updateScores();
