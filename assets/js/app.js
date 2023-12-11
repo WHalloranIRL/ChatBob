@@ -70,6 +70,16 @@ const noJoke = () => {
 
 //functions for when a users selects yes to either possible options
 
+const gameYes = () => {
+  emojisPicture.innerHTML = emojiObj.grinning;
+  chatDiv.textContent = "Unreal! Ok so I've for a few to choose from, I love games";
+  instructionsDiv.textContent =
+    "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
+  controlsDiv.innerHTML = `<button id="quiz" class="green-btn">Quiz</button>
+  <button id="rps" class="green-btn">RPS</button>
+  <button id="hilo" class="green-btn">Hi-Lo</button>`;
+};
+
 // random joke generator
 const randomJoke = () => {
   const randJokes = [
@@ -90,16 +100,6 @@ const randomJoke = () => {
     <p>Would you like to hear another one?</p>`;
 
   noGameControlsBtn.addEventListener("click", noJoke);
-};
-
-const gameYes = () => {
-  emojisPicture.innerHTML = emojiObj.grinning;
-  chatDiv.textContent = "Unreal! Ok so I've for a few to choose from, I love games";
-  instructionsDiv.textContent =
-    "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
-  controlsDiv.innerHTML = `<button id="quiz" class="green-btn">Quiz</button>
-  <button id="rps" class="green-btn">RPS</button>
-  <button id="hilo" class="green-btn">Hi-Lo</button>`;
 };
 
 // Event listeners
