@@ -55,9 +55,9 @@ const greeting = () => {
 // functions to terminate app when users selects no to both possible options
 const gameNo = () => {
   yesGameControlsBtn.setAttribute("data-function", "joke-yes");
+  noGameControlsBtn.setAttribute("data-function", "joke-no");
   chatDiv.textContent = `AAAAAhhhhhh ${userNameInput.value} thats a pity, would you like to hear a joke ?`;
   instructionsDiv.textContent = "";
-  noGameControlsBtn.addEventListener("click", noJoke);
   emojisPicture.innerHTML = emojiObj.sad;
 };
 
@@ -89,8 +89,10 @@ const randomJoke = () => {
     "Why don't eggs tell jokes? They'd crack each other up.",
     "Why can't your hand be 12 inches long? Because then it would be a foot.",
   ];
-
+  //set the button selection data labels
   yesGameControlsBtn.setAttribute("data-function", "joke-yes");
+  noGameControlsBtn.setAttribute("data-function", "joke-no");
+
   let displayJoke = randJokes[Math.floor(Math.random() * randJokes.length)];
   emojisPicture.innerHTML = emojiObj.cryinglol;
   chatDiv.textContent = `Here's one for you !`;
@@ -98,13 +100,11 @@ const randomJoke = () => {
   instructionSection.classList.add("hide");
   gameDiv.innerHTML = `<p>${displayJoke}<p>
     <p>Would you like to hear another one?</p>`;
-
-  noGameControlsBtn.addEventListener("click", noJoke);
 };
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
-noGameControlsBtn.addEventListener("click", gameNo);
+//noGameControlsBtn.addEventListener("click", gameNo);
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
 yesGameControlsBtn.addEventListener("click", function () {
@@ -116,6 +116,21 @@ yesGameControlsBtn.addEventListener("click", function () {
       break;
     case "joke-yes":
       randomJoke();
+      break;
+    default:
+      console.log("Do nothing");
+  }
+});
+
+noGameControlsBtn.addEventListener("click", function () {
+  const noChoice = noGameControlsBtn.getAttribute("data-function");
+
+  switch (noChoice) {
+    case "game-no":
+      gameNo();
+      break;
+    case "joke-no":
+      noJoke();
       break;
     default:
       console.log("Do nothing");
