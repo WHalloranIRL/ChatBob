@@ -78,6 +78,14 @@ const gameYes = () => {
   controlsDiv.innerHTML = `<button id="quiz" class="green-btn">Quiz</button>
   <button id="rps" class="green-btn">RPS</button>
   <button id="hilo" class="green-btn">Hi-Lo</button>`;
+
+  const rpsBtn = document.querySelector("#rps");
+  const quizBtn = document.querySelector("#quiz");
+  const hiloBtn = document.querySelector("#hilo");
+
+  rpsBtn.addEventListener("click", rps);
+  quizBtn.addEventListener("click", quiz);
+  hiloBtn.addEventListener("click", hilo);
 };
 
 // random joke generator
@@ -100,6 +108,20 @@ const randomJoke = () => {
   instructionSection.classList.add("hide");
   gameDiv.innerHTML = `<p>${displayJoke}<p>
     <p>Would you like to hear another one?</p>`;
+};
+
+//games section
+
+const rps = () => {
+  console.log("This is RPS");
+};
+
+const quiz = () => {
+  console.log("This is quiz");
+};
+
+const hilo = () => {
+  console.log("This is hilo");
 };
 
 // Event listeners
