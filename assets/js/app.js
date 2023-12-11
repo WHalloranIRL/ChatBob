@@ -120,7 +120,7 @@ const rps = () => {
   rpsDiv.classList.remove("hide");
   controlsDiv.classList.add("hide");
   instructionsDiv.textContent =
-    "You need to click on one of the buttons below to make your choice, I'll make mine and lets see who wins";
+    "You need to click on one of the buttons below to make your choice, best of 10 wins";
   chatDiv.textContent = `Ok - Let's Play Rock Paper Scissors`;
 
   let playerScore = 0;
@@ -146,14 +146,18 @@ const rps = () => {
       bobScore++;
     }
     let totalScore = playerScore + bobScore;
-    //console.log(totalScore);
+    console.log(totalScore);
 
-    if (totalScore >= 10) {
-      console.log("Game Over");
-      outcomeElement.textContent = `Game Over !`;
-    } else {
+    if (totalScore < 10) {
       updateScores();
       displayResult(playerChoice, computerChoice, result);
+    } else {
+      console.log("Game Over");
+      if (playerScore > bobScore) {
+        outcomeElement.textContent = `Game Over ! You win with a score of ${playerScore}`;
+      } else {
+        outcomeElement.textContent = `Game Over ! Bob win's with a score of ${bobScore}`;
+      }
     }
   }
 
