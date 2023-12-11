@@ -84,6 +84,7 @@ p {
 
 #scoreboard p {
   display: inline-block;
+  font-size: 2rem;
 }
 
 #outcome {
@@ -100,8 +101,17 @@ p {
   color: red;
 }
 
-.rps-hover:hover {
-  background-color: orange;
+.rps {
+  font-size: 4rem;
+  border-radius: 50%;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: whitesmoke;
+}
+
+.rps:hover,
+.rps:active {
+  background-color: rgba(144, 238, 144, 0.5);
 }
 
 .emoji {
