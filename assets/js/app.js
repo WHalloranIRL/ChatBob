@@ -49,19 +49,16 @@ const greeting = () => {
     controlsSection.classList.remove("hide");
     instructionsDiv.innerHTML = `<p>Would you like to play a game ? It's easy you can just click Yes or No below</p>`;
     emojisPicture.innerHTML = emojiObj.hug;
-
-    yesGameControlsBtn.addEventListener("click", gameYes);
   }
 };
 
 // functions to terminate app when users selects no to both possible options
 const gameNo = () => {
+  yesGameControlsBtn.setAttribute("data-function", "joke-yes");
   chatDiv.textContent = `AAAAAhhhhhh ${userNameInput.value} thats a pity, would you like to hear a joke ?`;
   instructionsDiv.textContent = "";
-  //   noBtn.removeEventListener("click", gameNo);
   noGameControlsBtn.addEventListener("click", noJoke);
   emojisPicture.innerHTML = emojiObj.sad;
-  yesGameControlsBtn.addEventListener("click", randomJoke);
 };
 
 const noJoke = () => {
@@ -83,6 +80,7 @@ const randomJoke = () => {
     "Why can't your hand be 12 inches long? Because then it would be a foot.",
   ];
 
+  yesGameControlsBtn.setAttribute("data-function", "joke-yes");
   let displayJoke = randJokes[Math.floor(Math.random() * randJokes.length)];
   emojisPicture.innerHTML = emojiObj.cryinglol;
   chatDiv.textContent = `Here's one for you !`;
@@ -91,7 +89,6 @@ const randomJoke = () => {
   gameDiv.innerHTML = `<p>${displayJoke}<p>
     <p>Would you like to hear another one?</p>`;
 
-  yesGameControlsBtn.addEventListener("click", randomJoke);
   noGameControlsBtn.addEventListener("click", noJoke);
 };
 
@@ -108,3 +105,19 @@ const gameYes = () => {
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
 noGameControlsBtn.addEventListener("click", gameNo);
+
+// create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
+yesGameControlsBtn.addEventListener("click", function () {
+  const yesChoice = yesGameControlsBtn.getAttribute("data-function");
+
+  switch (yesChoice) {
+    case "game-yes":
+      gameYes();
+      break;
+    case "joke-yes":
+      randomJoke();
+      break;
+    default:
+      console.log("Do nothing");
+  }
+});
