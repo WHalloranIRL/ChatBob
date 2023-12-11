@@ -19,6 +19,7 @@ const emojisPicture = document.querySelector("#emojis");
 // selecting control buttons
 const yesGameControlsBtn = document.querySelector("#yes");
 const noGameControlsBtn = document.querySelector("#no");
+const gameChoiceBtns = document.querySelector("#game-choice-btns");
 
 // creating emojis object list & urls for emojis
 const emojiObj = {
@@ -78,9 +79,11 @@ const gameYes = () => {
   chatDiv.textContent = "Unreal! Ok so I've for a few to choose from, I love games";
   instructionsDiv.textContent =
     "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
-  controlsDiv.innerHTML = `<button id="quizBtn" class="green-btn">Quiz</button>
-  <button id="rpsBtn" class="green-btn">RPS</button>
-  <button id="hiloBtn" class="green-btn">Hi-Lo</button>`;
+  gameChoiceBtns.classList.remove("hide");
+  controlsDiv.classList.add("hide");
+  // controlsDiv.innerHTML = `<button id="quizBtn" class="green-btn">Quiz</button>
+  // <button id="rpsBtn" class="green-btn">RPS</button>
+  // <button id="hiloBtn" class="green-btn">Hi-Lo</button>`;
 
   const rpsBtn = document.querySelector("#rpsBtn");
   const quizBtn = document.querySelector("#quizBtn");
