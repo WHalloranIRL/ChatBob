@@ -29,6 +29,8 @@ const emojiObj = {
   goodbye: createEmoji("1fae1", "🫡"),
   grinning: createEmoji("1f601", "😁"),
   hug: createEmoji("1f917", "🤗"),
+  distraught: createEmoji("1f629", "😩"),
+  meh: createEmoji("1fae4", "🫤"),
 };
 
 function createEmoji(code, alt) {
@@ -153,14 +155,17 @@ const rps = () => {
 
   function determineWinner(player, computer) {
     if (player === computer) {
+      emojisPicture.innerHTML = emojiObj.meh;
       return "It's a tie!";
     } else if (
       (player === "rock" && computer === "scissors") ||
       (player === "paper" && computer === "rock") ||
       (player === "scissors" && computer === "paper")
     ) {
+      emojisPicture.innerHTML = emojiObj.distraught;
       return "You win!";
     } else {
+      emojisPicture.innerHTML = emojiObj.grinning;
       return "Bob wins!";
     }
   }
