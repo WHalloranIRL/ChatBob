@@ -104,7 +104,6 @@ const randomJoke = () => {
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
-//noGameControlsBtn.addEventListener("click", gameNo);
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
 yesGameControlsBtn.addEventListener("click", function () {
