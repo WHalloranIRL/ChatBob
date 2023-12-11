@@ -122,6 +122,9 @@ const rps = () => {
     "You need to click on one of the buttons below to make your choice, I'll make mine and lets see who wins";
   chatDiv.textContent = `Ok - Let Play Rock Paper Scissors`;
 
+  let playerScore = 0;
+  let bobScore = 0;
+
   const choicesButtons = document.querySelectorAll("#rps button");
 
   choicesButtons.forEach((button) => {
@@ -136,6 +139,13 @@ const rps = () => {
 
     const result = determineWinner(playerChoice, computerChoice);
 
+    if (result === "You win!") {
+      playerScore++;
+    } else if (result === "Bob wins!") {
+      bobScore++;
+    }
+
+    updateScores();
     displayResult(playerChoice, computerChoice, result);
   }
 
@@ -158,7 +168,13 @@ const rps = () => {
     outcomeElement.textContent = `You chose ${player}. Bob chose ${computer}. ${result}`;
   }
 
-  function addScores() {}
+  function updateScores() {
+    playerScoreP = document.querySelector("player-score");
+    bobScoreP = document.querySelector("bobs-score");
+
+    playerScoreP.textContent = playerScore;
+    bobScoreP.textContent = bobScore;
+  }
 };
 
 const quiz = () => {
