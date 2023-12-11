@@ -149,13 +149,13 @@ const rps = () => {
     ) {
       return "You win!";
     } else {
-      return "Computer wins!";
+      return "Bob wins!";
     }
   }
 
   function displayResult(player, computer, result) {
     const outcomeElement = document.getElementById("outcome");
-    outcomeElement.textContent = `You chose ${player}. Computer chose ${computer}. ${result}`;
+    outcomeElement.textContent = `You chose ${player}. Bob chose ${computer}. ${result}`;
   }
 
   function addScores() {}
