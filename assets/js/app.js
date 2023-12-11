@@ -121,7 +121,7 @@ const rps = () => {
   controlsDiv.classList.add("hide");
   instructionsDiv.textContent =
     "You need to click on one of the buttons below to make your choice, I'll make mine and lets see who wins";
-  chatDiv.textContent = `Ok - Let Play Rock Paper Scissors`;
+  chatDiv.textContent = `Ok - Let's Play Rock Paper Scissors`;
 
   let playerScore = 0;
   let bobScore = 0;
