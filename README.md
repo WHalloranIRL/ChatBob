@@ -120,6 +120,7 @@ Testing was completed on multiple devices for resposiveness. All links and possi
 | Bug | Status | Description | Steps To Resolve |
 | --- | --- | --- | --- |
 | Invalid Instructions | Resolved | On clicking the Yes for game choice, old instructions were being delivered | Set the instructionsDiv class to hide |
+| Yes Button | Resolved | On clicking the Yes for jokes, the quiz buttons were appearing | Removed the eventListeners and created a switch statement to handle using data labels |
 
 ## Deployment
 
