@@ -10,6 +10,7 @@ const chatDiv = document.querySelector("#chat");
 const instructionsDiv = document.querySelector("#instructions");
 const gameDiv = document.querySelector("#game");
 const controlsDiv = document.querySelector("#controls");
+const rpsDiv = document.querySelector("#rps");
 //selecting the user input field
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -75,13 +76,13 @@ const gameYes = () => {
   chatDiv.textContent = "Unreal! Ok so I've for a few to choose from, I love games";
   instructionsDiv.textContent =
     "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
-  controlsDiv.innerHTML = `<button id="quiz" class="green-btn">Quiz</button>
-  <button id="rps" class="green-btn">RPS</button>
-  <button id="hilo" class="green-btn">Hi-Lo</button>`;
+  controlsDiv.innerHTML = `<button id="quizBtn" class="green-btn">Quiz</button>
+  <button id="rpsBtn" class="green-btn">RPS</button>
+  <button id="hiloBtn" class="green-btn">Hi-Lo</button>`;
 
-  const rpsBtn = document.querySelector("#rps");
-  const quizBtn = document.querySelector("#quiz");
-  const hiloBtn = document.querySelector("#hilo");
+  const rpsBtn = document.querySelector("#rpsBtn");
+  const quizBtn = document.querySelector("#quizBtn");
+  const hiloBtn = document.querySelector("#hiloBtn");
 
   rpsBtn.addEventListener("click", rps);
   quizBtn.addEventListener("click", quiz);
@@ -113,6 +114,11 @@ const randomJoke = () => {
 //games section
 
 const rps = () => {
+  console.log("This is RPS");
+  gameSection.classList.remove("hide");
+  rpsDiv.classList.remove("hide");
+  controlsDiv.classList.add("hide");
+
   const choicesButtons = document.querySelectorAll("#rps button");
 
   choicesButtons.forEach((button) => {
