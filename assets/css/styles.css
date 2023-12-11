@@ -68,12 +68,26 @@ p {
   font-weight: 600;
 }
 
+#outcome,
+#scoreboard,
 #game,
 #controls,
 #instructions {
   text-align: center;
   font-size: 1.8rem;
   padding: 0.5rem 0.5rem;
+}
+
+#scoreboard {
+  font-weight: 600;
+}
+
+#scoreboard p {
+  display: inline-block;
+}
+
+#outcome {
+  margin-top: 1rem;
 }
 
 .green-btn {

@@ -141,8 +141,10 @@ const rps = () => {
 
     if (result === "You win!") {
       playerScore++;
+      console.log(playerScore);
     } else if (result === "Bob wins!") {
       bobScore++;
+      console.log(bobScore);
     }
 
     updateScores();
@@ -169,8 +171,8 @@ const rps = () => {
   }
 
   function updateScores() {
-    playerScoreP = document.querySelector("player-score");
-    bobScoreP = document.querySelector("bobs-score");
+    const playerScoreP = document.querySelector("#player-score");
+    const bobScoreP = document.querySelector("#bobs-score");
 
     playerScoreP.textContent = playerScore;
     bobScoreP.textContent = bobScore;
