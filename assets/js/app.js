@@ -113,7 +113,43 @@ const randomJoke = () => {
 //games section
 
 const rps = () => {
-  console.log("This is RPS");
+  const choicesButtons = document.querySelectorAll("#rps button");
+
+  choicesButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      playGame(button.getAttribute("data-choice"));
+    });
+  });
+
+  function playGame(playerChoice) {
+    const choices = ["rock", "paper", "scissors"];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+    const result = determineWinner(playerChoice, computerChoice);
+
+    displayResult(playerChoice, computerChoice, result);
+  }
+
+  function determineWinner(player, computer) {
+    if (player === computer) {
+      return "It's a tie!";
+    } else if (
+      (player === "rock" && computer === "scissors") ||
+      (player === "paper" && computer === "rock") ||
+      (player === "scissors" && computer === "paper")
+    ) {
+      return "You win!";
+    } else {
+      return "Computer wins!";
+    }
+  }
+
+  function displayResult(player, computer, result) {
+    const outcomeElement = document.getElementById("outcome");
+    outcomeElement.textContent = `You chose ${player}. Computer chose ${computer}. ${result}`;
+  }
+
+  function addScores() {}
 };
 
 const quiz = () => {
