@@ -118,6 +118,9 @@ const rps = () => {
   gameSection.classList.remove("hide");
   rpsDiv.classList.remove("hide");
   controlsDiv.classList.add("hide");
+  instructionsDiv.textContent =
+    "You need to click on one of the buttons below to make your choice, I'll make mine and lets see who wins";
+  chatDiv.textContent = `Ok - Let Play Rock Paper Scissors`;
 
   const choicesButtons = document.querySelectorAll("#rps button");
 
