@@ -125,7 +125,7 @@ const rps = () => {
 
   let playerScore = 0;
   let bobScore = 0;
-
+  const outcomeElement = document.getElementById("outcome");
   const choicesButtons = document.querySelectorAll("#rps button");
 
   choicesButtons.forEach((button) => {
@@ -145,9 +145,16 @@ const rps = () => {
     } else if (result === "Bob wins!") {
       bobScore++;
     }
+    let totalScore = playerScore + bobScore;
+    //console.log(totalScore);
 
-    updateScores();
-    displayResult(playerChoice, computerChoice, result);
+    if (totalScore >= 10) {
+      console.log("Game Over");
+      outcomeElement.textContent = `Game Over !`;
+    } else {
+      updateScores();
+      displayResult(playerChoice, computerChoice, result);
+    }
   }
 
   function determineWinner(player, computer) {
@@ -168,7 +175,7 @@ const rps = () => {
   }
 
   function displayResult(player, computer, result) {
-    const outcomeElement = document.getElementById("outcome");
+    //const outcomeElement = document.getElementById("outcome");
     outcomeElement.textContent = `You chose ${player}. Bob chose ${computer}. ${result}`;
   }
 
