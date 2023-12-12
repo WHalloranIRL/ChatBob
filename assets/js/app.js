@@ -68,6 +68,7 @@ const gameNo = () => {
 const noJoke = () => {
   chatDiv.textContent = `No problem ${userNameInput.value}, maybe next time!`;
   emojisPicture.innerHTML = emojiObj.goodbye;
+  instructionsDiv.textContent = "";
   controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
   gameSection.classList.add("hide");
 };
@@ -120,9 +121,6 @@ const randomJoke = () => {
 
 //games section
 
-let playerScore = 0;
-let bobScore = 0;
-
 const rps = () => {
   const playerScoreP = document.querySelector("#player-score");
   const bobScoreP = document.querySelector("#bobs-score");
@@ -135,6 +133,9 @@ const rps = () => {
   instructionsDiv.textContent =
     "You need to click on one of the buttons below to make your choice, first to 10 wins";
   chatDiv.textContent = `Ok - Let's Play Rock Paper Scissors`;
+
+  let playerScore = 0;
+  let bobScore = 0;
 
   playerScoreP.textContent = playerScore;
   bobScoreP.textContent = bobScore;
