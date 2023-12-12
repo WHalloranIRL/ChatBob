@@ -238,7 +238,7 @@ const rps = () => {
 const quiz = () => {
   let correctScore = 0;
   let incorrectScore = 0;
-  let firstQuestion = "";
+  let questionNo = 0;
   //let nextQuestion = "";
 
   const popCultureQuestions = [
@@ -346,17 +346,29 @@ const quiz = () => {
     },
   ];
 
+  function startQuiz() {
+    const questionObjectInfo = startQuestion();
+
+    const questionText = questionObjectInfo.questionText;
+    const answersText = questionObjectInfo.answers;
+    const correctText = questionObjectInfo.correctAnswer;
+
+    console.log(questionText);
+    console.log(answersText);
+    console.log(correctText);
+  }
+
   const startQuestion = () => {
     const compareFunction = (a, b) => {
       return Math.random() - 0.5;
     };
     popCultureQuestions.sort(compareFunction);
-    console.log(popCultureQuestions[0]);
+    return popCultureQuestions[0];
   };
 
-  startQuestion();
+  startQuiz();
 
-  function startQuiz() {}
+  function isAnswerCorrect() {}
 
   function updateScores() {}
 
