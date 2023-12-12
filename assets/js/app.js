@@ -239,7 +239,7 @@ const quiz = () => {
   let correctScore = 0;
   let incorrectScore = 0;
   let firstQuestion = "";
-  let nextQuestion = "";
+  //let nextQuestion = "";
 
   const popCultureQuestions = [
     {
@@ -347,18 +347,22 @@ const quiz = () => {
   ];
 
   const startQuestion = () => {
-    let randomSort = Math.random() - 0.5;
-    popCultureQuestions.sort(randomSort);
-    console.log(popCultureQuestions);
+    const compareFunction = (a, b) => {
+      return Math.random() - 0.5;
+    };
+    popCultureQuestions.sort(compareFunction);
+    console.log(popCultureQuestions[0]);
   };
 
-  startQuiz();
+  startQuestion();
 
-  updateScores();
+  function startQuiz() {}
 
-  nextQuestion();
+  function updateScores() {}
 
-  endQuiz();
+  function nextQuestion() {}
+
+  function endQuiz() {}
 };
 
 const hilo = () => {
