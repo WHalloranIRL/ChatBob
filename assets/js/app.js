@@ -34,10 +34,10 @@ const emojiObj = {
   meh: createEmoji("1fae4", "🫤"),
 };
 
-function createEmoji(code, alt) {
+const createEmoji = (code, alt) => {
   return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
       <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif" alt="${alt}">`;
-}
+};
 
 // function for checking userNameInput has been correctly entered
 const greeting = () => {
@@ -140,9 +140,9 @@ const rps = () => {
   playerScoreP.textContent = playerScore;
   bobScoreP.textContent = bobScore;
 
-  function buttonClickHandler(e) {
+  const buttonClickHandler = (e) => {
     playGame(e.target.getAttribute("data-choice"));
-  }
+  };
 
   // Loop through buttons and add/remove the event listener
   choicesButtons.forEach((button) => {
@@ -172,7 +172,7 @@ const rps = () => {
     }
   }
 
-  function determineWinner(player, computer) {
+  const determineWinner = (player, computer) => {
     if (player === computer) {
       emojisPicture.innerHTML = emojiObj.meh;
       return "It's a tie!";
@@ -187,20 +187,20 @@ const rps = () => {
       emojisPicture.innerHTML = emojiObj.grinning;
       return "Bob wins!";
     }
-  }
+  };
 
-  function displayResult(player, computer, result) {
+  const displayResult = (player, computer, result) => {
     outcomeElement.textContent = `You chose ${player}. Bob chose ${computer}. ${result}`;
-  }
+  };
 
-  function updateScores() {
+  const updateScores = () => {
     playerScoreP.textContent = playerScore;
     bobScoreP.textContent = bobScore;
     console.log(`updateScores Player score ${playerScore}`);
     console.log(`updateScores Bob score ${bobScore}`);
-  }
+  };
 
-  function endGame() {
+  const endGame = () => {
     console.log("Game Over");
     rpsDiv.classList.add("hide");
     controlsDiv.classList.remove("hide");
@@ -232,7 +232,7 @@ const rps = () => {
     choicesButtons.forEach((button) => {
       button.removeEventListener("click", buttonClickHandler);
     });
-  }
+  };
 };
 
 const quiz = () => {
@@ -243,12 +243,8 @@ const hilo = () => {
   console.log("This is hilo");
 };
 
-// Event listeners
-userInputBtn.addEventListener("click", greeting);
-yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
-
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
-const yesBtnClickHandler = function () {
+const yesBtnClickHandler = () => {
   const yesChoice = yesGameControlsBtn.getAttribute("data-function");
 
   switch (yesChoice) {
@@ -280,3 +276,7 @@ noGameControlsBtn.addEventListener("click", function () {
       console.log("Do nothing");
   }
 });
+
+// Event listeners
+userInputBtn.addEventListener("click", greeting);
+yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
