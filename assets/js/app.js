@@ -118,7 +118,14 @@ const randomJoke = () => {
 
 //games section
 
+let playerScore = 0;
+let bobScore = 0;
+
 const rps = () => {
+  const playerScoreP = document.querySelector("#player-score");
+  const bobScoreP = document.querySelector("#bobs-score");
+  const outcomeElement = document.getElementById("outcome");
+  const choicesButtons = document.querySelectorAll("#rps button");
   gameSection.classList.remove("hide");
   rpsDiv.classList.remove("hide");
   gameChoiceBtns.classList.add("hide");
@@ -127,12 +134,11 @@ const rps = () => {
     "You need to click on one of the buttons below to make your choice, first to 10 wins";
   chatDiv.textContent = `Ok - Let's Play Rock Paper Scissors`;
 
-  let playerScore = 0;
-  let bobScore = 0;
-  const outcomeElement = document.getElementById("outcome");
-  const choicesButtons = document.querySelectorAll("#rps button");
+  playerScoreP.textContent = playerScore;
+  bobScoreP.textContent = bobScore;
 
   choicesButtons.forEach((button) => {
+    button.removeEventListener("click", playGame);
     button.addEventListener("click", function () {
       playGame(button.getAttribute("data-choice"));
     });
@@ -146,27 +152,18 @@ const rps = () => {
 
     if (result === "You win!") {
       playerScore++;
+      console.log("playGame Player" + playerScore);
     } else if (result === "Bob wins!") {
       bobScore++;
+      console.log("playGame Bob" + bobScore);
     }
 
     // Check if either player or Bob has reached a score of 10
-    if (playerScore <= 10 && bobScore <= 10) {
+    if (playerScore < 10 && bobScore < 10) {
       updateScores();
       displayResult(playerChoice, computerChoice, result);
     } else {
-      console.log("Game Over");
-      rpsDiv.classList.add("hide");
-      controlsDiv.classList.remove("hide");
-      noGameControlsBtn.setAttribute("data-function", "joke-no");
-      yesGameControlsBtn.setAttribute("data-function", "rps-again");
-
-      // Check who has the higher score and display the outcome
-      if (playerScore > bobScore) {
-        outcomeElement.textContent = `Game Over! You win - Congrats`;
-      } else {
-        outcomeElement.textContent = `Game Over! Bob wins - Better luck next time`;
-      }
+      endGame();
     }
   }
 
@@ -192,11 +189,38 @@ const rps = () => {
   }
 
   function updateScores() {
-    const playerScoreP = document.querySelector("#player-score");
-    const bobScoreP = document.querySelector("#bobs-score");
+    playerScoreP.textContent = playerScore;
+    bobScoreP.textContent = bobScore;
+    console.log(`updateScores Player score ${playerScore}`);
+    console.log(`updateScores Bob score ${bobScore}`);
+  }
+
+  function endGame() {
+    console.log("Game Over");
+    rpsDiv.classList.add("hide");
+    controlsDiv.classList.remove("hide");
+    noGameControlsBtn.setAttribute("data-function", "joke-no");
+    yesGameControlsBtn.setAttribute("data-function", "rps-again");
+
+    // Check who has the higher score and display the outcome
+    if (playerScore > bobScore) {
+      outcomeElement.textContent = `Game Over! You win - Congrats`;
+    } else {
+      outcomeElement.textContent = `Game Over! Bob wins - Better luck next time`;
+    }
+
+    // Reset the scores
+    playerScore = 0;
+    bobScore = 0;
+
+    console.log("Endgame " + playerScore);
+    console.log("Endgame " + bobScore);
 
     playerScoreP.textContent = playerScore;
     bobScoreP.textContent = bobScore;
+
+    // Update the displayed scores on the page
+    updateScores();
   }
 };
 
