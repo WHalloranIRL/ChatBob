@@ -11,6 +11,8 @@ const instructionsDiv = document.querySelector("#instructions");
 const gameDiv = document.querySelector("#game");
 const controlsDiv = document.querySelector("#controls");
 const rpsDiv = document.querySelector("#rps");
+const quizDiv = document.querySelector("#quiz");
+const resultDiv = document.querySelector("#result");
 //selecting the user input field
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -240,6 +242,12 @@ const quiz = () => {
   let incorrectScore = 0;
   let questionNo = 0;
   //let nextQuestion = "";
+  chatDiv.textContent = `Welcome to the Pop Culture Quiz ${userNameInput.value}`;
+  instructionsDiv.innerHTML =
+    "<p>Ok so, we have 10 questions for you. Multiple choice, just pick the one you think is right!</p><p>When your ready just hit the start button!</p>";
+  gameChoiceBtns.classList.add("hide");
+  resultDiv.classList.add("hide");
+  gameSection.classList.remove("hide");
 
   const popCultureQuestions = [
     {
