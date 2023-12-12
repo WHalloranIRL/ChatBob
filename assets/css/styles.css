@@ -102,6 +102,19 @@ p {
   color: red;
 }
 
+.answers-btn {
+  min-width: 25rem;
+  margin: 1rem 0;
+  height: 4rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.answers-btn:hover {
+  background-color: azure;
+}
+
 .rps {
   font-size: 4rem;
   border-radius: 50%;
