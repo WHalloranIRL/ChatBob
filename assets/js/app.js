@@ -248,6 +248,7 @@ const quiz = () => {
   gameChoiceBtns.classList.add("hide");
   resultDiv.classList.add("hide");
   gameSection.classList.remove("hide");
+  quizDiv.classList.remove("hide");
 
   const popCultureQuestions = [
     {
