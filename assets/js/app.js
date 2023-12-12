@@ -89,6 +89,8 @@ const gameYes = () => {
   const quizBtn = document.querySelector("#quizBtn");
   const hiloBtn = document.querySelector("#hiloBtn");
 
+  yesGameControlsBtn.removeEventListener("click", yesBtnClickHandler);
+
   rpsBtn.addEventListener("click", rps);
   quizBtn.addEventListener("click", quiz);
   hiloBtn.addEventListener("click", hilo);
@@ -137,11 +139,13 @@ const rps = () => {
   playerScoreP.textContent = playerScore;
   bobScoreP.textContent = bobScore;
 
+  function buttonClickHandler(e) {
+    playGame(e.target.getAttribute("data-choice"));
+  }
+
+  // Loop through buttons and add/remove the event listener
   choicesButtons.forEach((button) => {
-    button.removeEventListener("click", playGame);
-    button.addEventListener("click", function () {
-      playGame(button.getAttribute("data-choice"));
-    });
+    button.addEventListener("click", buttonClickHandler);
   });
 
   function playGame(playerChoice) {
@@ -201,6 +205,7 @@ const rps = () => {
     controlsDiv.classList.remove("hide");
     noGameControlsBtn.setAttribute("data-function", "joke-no");
     yesGameControlsBtn.setAttribute("data-function", "rps-again");
+    yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
 
     // Check who has the higher score and display the outcome
     if (playerScore > bobScore) {
@@ -221,6 +226,11 @@ const rps = () => {
 
     // Update the displayed scores on the page
     updateScores();
+
+    //remove event listeners before new game starts
+    choicesButtons.forEach((button) => {
+      button.removeEventListener("click", buttonClickHandler);
+    });
   }
 };
 
@@ -236,7 +246,7 @@ const hilo = () => {
 userInputBtn.addEventListener("click", greeting);
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
-yesGameControlsBtn.addEventListener("click", function () {
+const yesBtnClickHandler = function () {
   const yesChoice = yesGameControlsBtn.getAttribute("data-function");
 
   switch (yesChoice) {
@@ -252,7 +262,9 @@ yesGameControlsBtn.addEventListener("click", function () {
     default:
       console.log("Do nothing");
   }
-});
+};
+
+yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
 
 noGameControlsBtn.addEventListener("click", function () {
   const noChoice = noGameControlsBtn.getAttribute("data-function");
