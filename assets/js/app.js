@@ -34,10 +34,10 @@ const emojiObj = {
   meh: createEmoji("1fae4", "🫤"),
 };
 
-const createEmoji = (code, alt) => {
+function createEmoji(code, alt) {
   return `<source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.webp" type="image/webp">
       <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif" alt="${alt}">`;
-};
+}
 
 // function for checking userNameInput has been correctly entered
 const greeting = () => {
@@ -210,9 +210,9 @@ const rps = () => {
 
     // Check who has the higher score and display the outcome
     if (playerScore > bobScore) {
-      outcomeElement.textContent = `Game Over! You win - Congrats`;
+      outcomeElement.textContent = `Game Over! You win ${playerScore} : ${bobScore} - Congrats`;
     } else {
-      outcomeElement.textContent = `Game Over! Bob wins - Better luck next time`;
+      outcomeElement.textContent = `Game Over! Bob wins ${bobScore} : ${playerScore} - Better luck next time`;
     }
 
     // Reset the scores
