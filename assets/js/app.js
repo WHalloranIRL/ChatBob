@@ -245,6 +245,7 @@ const hilo = () => {
 
 // Event listeners
 userInputBtn.addEventListener("click", greeting);
+yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
 const yesBtnClickHandler = function () {
@@ -264,8 +265,6 @@ const yesBtnClickHandler = function () {
       console.log("Do nothing");
   }
 };
-
-yesGameControlsBtn.addEventListener("click", yesBtnClickHandler);
 
 noGameControlsBtn.addEventListener("click", function () {
   const noChoice = noGameControlsBtn.getAttribute("data-function");
