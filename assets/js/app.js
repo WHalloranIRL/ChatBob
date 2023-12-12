@@ -13,6 +13,7 @@ const controlsDiv = document.querySelector("#controls");
 const rpsDiv = document.querySelector("#rps");
 const quizDiv = document.querySelector("#quiz");
 const resultDiv = document.querySelector("#result");
+const quizQuestionDiv = document.querySelector("#quiz-question");
 //selecting the user input field
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -22,6 +23,8 @@ const emojisPicture = document.querySelector("#emojis");
 const yesGameControlsBtn = document.querySelector("#yes");
 const noGameControlsBtn = document.querySelector("#no");
 const gameChoiceBtns = document.querySelector("#game-choice-btns");
+const startQuizBtn = document.querySelector("#start-quiz");
+const nextQuestionBtn = document.querySelector("#next-question-quiz");
 
 // creating emojis object list & urls for emojis
 const emojiObj = {
@@ -84,10 +87,6 @@ const gameYes = () => {
     "Ok so simply select from the list below. You've got a 10 question quiz, RPS(Rock,Paper,Scissors) or Hi-Lo card game.";
   gameChoiceBtns.classList.remove("hide");
   controlsDiv.classList.add("hide");
-  // controlsDiv.innerHTML = `<button id="quizBtn" class="green-btn">Quiz</button>
-  // <button id="rpsBtn" class="green-btn">RPS</button>
-  // <button id="hiloBtn" class="green-btn">Hi-Lo</button>`;
-
   const rpsBtn = document.querySelector("#rpsBtn");
   const quizBtn = document.querySelector("#quizBtn");
   const hiloBtn = document.querySelector("#hiloBtn");
@@ -241,7 +240,8 @@ const quiz = () => {
   let correctScore = 0;
   let incorrectScore = 0;
   let questionNo = 0;
-  //let nextQuestion = "";
+  const quizButtons = document.querySelectorAll("#quiz-question button");
+
   chatDiv.textContent = `Welcome to the Pop Culture Quiz ${userNameInput.value}`;
   instructionsDiv.innerHTML =
     "<p>Ok so, we have 10 questions for you. Multiple choice, just pick the one you think is right!</p><p>When your ready just hit the start button!</p>";
@@ -249,7 +249,9 @@ const quiz = () => {
   resultDiv.classList.add("hide");
   gameSection.classList.remove("hide");
   quizDiv.classList.remove("hide");
+  startQuizBtn.addEventListener("click", startQuiz);
 
+  //questions for the quiz
   const popCultureQuestions = [
     {
       questionText: "In which movie does Leonardo DiCaprio say, 'I'm the king of the world!'?",
@@ -356,17 +358,24 @@ const quiz = () => {
   ];
 
   function startQuiz() {
-    const questionObjectInfo = startQuestion();
+    quizQuestionDiv.classList.remove("hide");
+    startQuizBtn.classList.add("hide");
+    instructionsDiv.classList.add("hide");
 
+    const questionObjectInfo = startQuestion();
     const questionText = questionObjectInfo.questionText;
     const answersText = questionObjectInfo.answers;
     const correctText = questionObjectInfo.correctAnswer;
 
-    console.log(questionText);
-    console.log(answersText);
-    console.log(correctText);
+    chatDiv.textContent = questionText;
+
+    quizButtons.forEach((button, index) => {
+      const optionKey = `option${index + 1}`;
+      button.innerText = answersText[optionKey];
+    });
   }
 
+  //sorting the questions in a random order to avoid the same sequence every time
   const startQuestion = () => {
     const compareFunction = (a, b) => {
       return Math.random() - 0.5;
@@ -375,15 +384,15 @@ const quiz = () => {
     return popCultureQuestions[0];
   };
 
-  startQuiz();
-
   function isAnswerCorrect() {}
 
   function updateScores() {}
 
   function nextQuestion() {}
 
-  function endQuiz() {}
+  function endQuiz() {
+    startQuizBtn.removeEventListener("click", startQuiz);
+  }
 };
 
 const hilo = () => {
