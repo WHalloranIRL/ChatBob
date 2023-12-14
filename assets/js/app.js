@@ -362,10 +362,17 @@ const quiz = () => {
     startQuizBtn.classList.add("hide");
     instructionsDiv.classList.add("hide");
 
-    const questionObjectInfo = startQuestion();
+    //determin if its the first question or not
+    if (questionNo === 0) {
+      questionObjectInfo = startQuestion();
+    } else {
+      questionObjectInfo = popCultureQuestions[questionNo];
+      console.log("Im in the else for startquiz");
+      console.log(questionObjectInfo);
+    }
+
     const questionText = questionObjectInfo.questionText;
     const answersText = questionObjectInfo.answers;
-    // const correctText = questionObjectInfo.correctAnswer;
 
     chatDiv.textContent = questionText;
     //set the answers on each button and add an event listener with the chosen answer
@@ -388,6 +395,10 @@ const quiz = () => {
     return popCultureQuestions[questionNo];
   };
 
+  /* isAnswerCorrect function takes in 2 arguments, gets the correct answer from the questions array
+  checks if the answer is correct or not, styles based on this and updates the answer scores, updates the question number,
+  dispalys the next button and add an event listener
+   */
   function isAnswerCorrect(selectedOption, clickedButton) {
     let correctOption = popCultureQuestions[questionNo].correctAnswer;
     if (selectedOption === correctOption) {
@@ -399,17 +410,27 @@ const quiz = () => {
       clickedButton.classList.add("red-btn");
       incorrectScore++;
     }
-
     quizButtons.forEach((button) => {
       button.setAttribute("disabled", true);
     });
 
     questionNo++;
+    nextQuestionBtn.classList.remove("hide");
+    nextQuestionBtn.addEventListener("click", nextQuestion);
   }
 
   function updateScores() {}
 
-  function nextQuestion() {}
+  function nextQuestion() {
+    console.log("now were in nextQuestion");
+    nextQuestionBtn.removeEventListener("click", nextQuestion);
+    // make all buttons active again
+    quizButtons.forEach((button) => {
+      button.removeAttribute("disabled", true);
+      button.classList.remove("green-btn", "red-btn");
+    });
+    startQuiz();
+  }
 
   function endQuiz() {
     startQuizBtn.removeEventListener("click", startQuiz);
