@@ -14,7 +14,7 @@ const rpsDiv = document.querySelector("#rps");
 const quizDiv = document.querySelector("#quiz");
 const resultDiv = document.querySelector("#result");
 const quizQuestionDiv = document.querySelector("#quiz-question");
-//selecting the user input field
+//selecting the user input fields
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
 // selecting the emojis picture element
@@ -248,6 +248,7 @@ const quiz = () => {
     isAnswerCorrect(selectedOption, e.target);
   };
 
+  //setup the dispaly for the beginning of the quiz
   chatDiv.textContent = `Welcome to the Pop Culture Quiz ${userNameInput.value}`;
   instructionsDiv.innerHTML =
     "<p>Ok so, we have 10 questions for you. Multiple choice, just pick the one you think is right!</p><p>When your ready just hit the start button!</p>";
@@ -363,7 +364,7 @@ const quiz = () => {
     },
   ];
 
-  function startQuiz() {
+  const startQuiz = () => {
     quizQuestionDiv.classList.remove("hide");
     startQuizBtn.classList.add("hide");
     instructionsDiv.classList.add("hide");
@@ -373,25 +374,21 @@ const quiz = () => {
       questionObjectInfo = startQuestion();
     } else {
       questionObjectInfo = popCultureQuestions[questionNo];
-      console.log("Im in the else for startquiz");
-      console.log(questionObjectInfo);
     }
 
     const questionText = questionObjectInfo.questionText;
     const answersText = questionObjectInfo.answers;
-
+    //displaying the question
     chatDiv.textContent = questionText;
-
     //set the answers on each button and add an event listener with the chosen answer
-
     quizButtons.forEach((button, index) => {
       const optionKey = `option${index + 1}`;
       button.innerText = answersText[optionKey];
       button.addEventListener("click", answerButtonHandler);
     });
-  }
+  };
 
-  //sorting the questions in a random order to avoid the same sequence every time
+  //sorting the questions in a random order to avoid the same sequence every time the quiz is started
   const startQuestion = () => {
     const compareFunction = (a, b) => {
       return Math.random() - 0.5;
@@ -404,8 +401,10 @@ const quiz = () => {
   checks if the answer is correct or not, styles based on this and updates the answer scores, updates the question number,
   dispalys the next button and add an event listener
    */
-  function isAnswerCorrect(selectedOption, clickedButton) {
+  const isAnswerCorrect = (selectedOption, clickedButton) => {
+    //get the correct answer from the questions array
     let correctOption = popCultureQuestions[questionNo].correctAnswer;
+    //determin if the answer is right or wrong
     if (selectedOption === correctOption) {
       console.log("Answer is correct");
       clickedButton.classList.add("green-btn");
@@ -415,22 +414,22 @@ const quiz = () => {
       clickedButton.classList.add("red-btn");
       incorrectScore++;
     }
+
+    //disable all buttons by setting the attribute
     quizButtons.forEach((button) => {
       button.setAttribute("disabled", true);
     });
 
     questionNo++;
-    console.log(questionNo);
     nextQuestionBtn.classList.remove("hide");
     nextQuestionBtn.addEventListener("click", nextQuestion);
-  }
+  };
 
   function updateScores() {}
 
-  function nextQuestion() {
-    console.log("now were in nextQuestion");
-
-    // make all buttons active again and removes old listeners to avoid duplication
+  /* make all buttons active again, reset styles and removes old listeners to avoid duplication
+    checking if the questions = 10 as this is the amount of questions in the array, this will end the quiz*/
+  const nextQuestion = () => {
     quizButtons.forEach((button) => {
       button.removeEventListener("click", answerButtonHandler);
       button.removeAttribute("disabled", true);
@@ -441,11 +440,11 @@ const quiz = () => {
     } else {
       startQuiz();
     }
-  }
+  };
 
-  function endQuiz() {
+  const endQuiz = () => {
     startQuizBtn.removeEventListener("click", startQuiz);
-  }
+  };
 };
 
 const hilo = () => {
