@@ -441,6 +441,8 @@ const quiz = () => {
     if (questionNo === 10) {
       console.log("Game Over");
       updateScores();
+      quizQuestionDiv.classList.add("hide");
+      nextQuestionBtn.classList.add("hide");
     } else {
       updateScores();
       startQuiz();
