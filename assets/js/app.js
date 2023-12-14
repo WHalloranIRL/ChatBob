@@ -426,7 +426,9 @@ const quiz = () => {
     nextQuestionBtn.addEventListener("click", nextQuestion);
   };
 
-  function updateScores() {}
+  function updateScores() {
+    quizScores.textContent = `Correct Score ${correctScore} - Incorrect Score ${incorrectScore}`;
+  }
 
   /* make all buttons active again, reset styles and removes old listeners to avoid duplication
     checking if the questions = 10 as this is the amount of questions in the array, this will end the quiz*/
@@ -439,6 +441,7 @@ const quiz = () => {
     if (questionNo === 10) {
       console.log("Game Over");
     } else {
+      updateScores();
       startQuiz();
     }
   };
