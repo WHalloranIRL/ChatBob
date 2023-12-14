@@ -440,6 +440,7 @@ const quiz = () => {
     });
     if (questionNo === 10) {
       console.log("Game Over");
+      updateScores();
     } else {
       updateScores();
       startQuiz();
