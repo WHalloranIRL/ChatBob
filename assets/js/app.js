@@ -389,11 +389,6 @@ const quiz = () => {
   };
 
   function isAnswerCorrect(selectedOption, clickedButton) {
-    console.log("Inside the isAnswerCorrect");
-    console.log(selectedOption);
-    console.log(questionNo);
-    console.log(clickedButton);
-
     let correctOption = popCultureQuestions[questionNo].correctAnswer;
     if (selectedOption === correctOption) {
       console.log("Answer is correct");
@@ -404,6 +399,11 @@ const quiz = () => {
       clickedButton.classList.add("red-btn");
       incorrectScore++;
     }
+
+    quizButtons.forEach((button) => {
+      button.setAttribute("disabled", true);
+    });
+
     questionNo++;
   }
 

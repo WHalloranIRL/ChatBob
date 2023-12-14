@@ -147,3 +147,7 @@ p {
   font-weight: 600;
   color: red;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}
