@@ -368,10 +368,14 @@ const quiz = () => {
     const correctText = questionObjectInfo.correctAnswer;
 
     chatDiv.textContent = questionText;
-
+    //set the answers on each button and add an event listener
     quizButtons.forEach((button, index) => {
       const optionKey = `option${index + 1}`;
       button.innerText = answersText[optionKey];
+      button.addEventListener("click", (e) => {
+        const selectedOption = e.target.getAttribute("data-quiz");
+        isAnswerCorrect(selectedOption);
+      });
     });
   }
 
@@ -381,10 +385,23 @@ const quiz = () => {
       return Math.random() - 0.5;
     };
     popCultureQuestions.sort(compareFunction);
-    return popCultureQuestions[0];
+    return popCultureQuestions[questionNo];
   };
 
-  function isAnswerCorrect() {}
+  function isAnswerCorrect(selectedOption) {
+    console.log("Inside the isAnswerCorrect");
+    console.log(selectedOption);
+    console.log(questionNo);
+    let correctOption = popCultureQuestions[questionNo].correctAnswer;
+    if (selectedOption === correctOption) {
+      console.log("Answer is correct");
+      correctScore++;
+    } else {
+      console.log("Answer is false");
+      incorrectScore++;
+    }
+    questionNo++;
+  }
 
   function updateScores() {}
 
