@@ -420,6 +420,7 @@ const quiz = () => {
     });
 
     questionNo++;
+    console.log(questionNo);
     nextQuestionBtn.classList.remove("hide");
     nextQuestionBtn.addEventListener("click", nextQuestion);
   }
@@ -435,7 +436,11 @@ const quiz = () => {
       button.removeAttribute("disabled", true);
       button.classList.remove("green-btn", "red-btn");
     });
-    startQuiz();
+    if (questionNo === 10) {
+      console.log("Game Over");
+    } else {
+      startQuiz();
+    }
   }
 
   function endQuiz() {
