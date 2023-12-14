@@ -242,6 +242,12 @@ const quiz = () => {
   let questionNo = 0;
   const quizButtons = document.querySelectorAll("#quiz-question button");
 
+  // used to add and remove the event listeners from functions globally
+  const answerButtonHandler = (e) => {
+    const selectedOption = e.target.getAttribute("data-quiz");
+    isAnswerCorrect(selectedOption, e.target);
+  };
+
   chatDiv.textContent = `Welcome to the Pop Culture Quiz ${userNameInput.value}`;
   instructionsDiv.innerHTML =
     "<p>Ok so, we have 10 questions for you. Multiple choice, just pick the one you think is right!</p><p>When your ready just hit the start button!</p>";
@@ -375,14 +381,13 @@ const quiz = () => {
     const answersText = questionObjectInfo.answers;
 
     chatDiv.textContent = questionText;
+
     //set the answers on each button and add an event listener with the chosen answer
+
     quizButtons.forEach((button, index) => {
       const optionKey = `option${index + 1}`;
       button.innerText = answersText[optionKey];
-      button.addEventListener("click", (e) => {
-        const selectedOption = e.target.getAttribute("data-quiz");
-        isAnswerCorrect(selectedOption, e.target);
-      });
+      button.addEventListener("click", answerButtonHandler);
     });
   }
 
@@ -423,9 +428,10 @@ const quiz = () => {
 
   function nextQuestion() {
     console.log("now were in nextQuestion");
-    nextQuestionBtn.removeEventListener("click", nextQuestion);
-    // make all buttons active again
+
+    // make all buttons active again and removes old listeners to avoid duplication
     quizButtons.forEach((button) => {
+      button.removeEventListener("click", answerButtonHandler);
       button.removeAttribute("disabled", true);
       button.classList.remove("green-btn", "red-btn");
     });
