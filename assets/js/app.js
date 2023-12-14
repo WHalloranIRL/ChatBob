@@ -433,6 +433,7 @@ const quiz = () => {
   /* make all buttons active again, reset styles and removes old listeners to avoid duplication
     checking if the questions = 10 as this is the amount of questions in the array, this will end the quiz*/
   const nextQuestion = () => {
+    quizScores.classList.remove("hide");
     quizButtons.forEach((button) => {
       button.removeEventListener("click", answerButtonHandler);
       button.removeAttribute("disabled", true);
