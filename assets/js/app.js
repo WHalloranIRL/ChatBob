@@ -441,8 +441,7 @@ const quiz = () => {
     if (questionNo === 10) {
       console.log("Game Over");
       updateScores();
-      quizQuestionDiv.classList.add("hide");
-      nextQuestionBtn.classList.add("hide");
+      endQuiz();
     } else {
       updateScores();
       startQuiz();
@@ -451,6 +450,8 @@ const quiz = () => {
 
   const endQuiz = () => {
     startQuizBtn.removeEventListener("click", startQuiz);
+    quizQuestionDiv.classList.add("hide");
+    nextQuestionBtn.classList.add("hide");
   };
 };
 
