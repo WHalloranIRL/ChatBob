@@ -14,6 +14,7 @@ const rpsDiv = document.querySelector("#rps");
 const quizDiv = document.querySelector("#quiz");
 const resultDiv = document.querySelector("#result");
 const quizQuestionDiv = document.querySelector("#quiz-question");
+const quizScores = document.querySelector("#quiz-scores");
 //selecting the user input fields
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -364,7 +365,7 @@ const quiz = () => {
     },
   ];
 
-  const startQuiz = () => {
+  function startQuiz() {
     quizQuestionDiv.classList.remove("hide");
     startQuizBtn.classList.add("hide");
     instructionsDiv.classList.add("hide");
@@ -386,7 +387,7 @@ const quiz = () => {
       button.innerText = answersText[optionKey];
       button.addEventListener("click", answerButtonHandler);
     });
-  };
+  }
 
   //sorting the questions in a random order to avoid the same sequence every time the quiz is started
   const startQuestion = () => {
