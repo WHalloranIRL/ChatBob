@@ -401,6 +401,7 @@ const quiz = () => {
       correctScore++;
     } else {
       console.log("Answer is false");
+      clickedButton.classList.add("red-btn");
       incorrectScore++;
     }
     questionNo++;
