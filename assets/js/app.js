@@ -365,16 +365,16 @@ const quiz = () => {
     const questionObjectInfo = startQuestion();
     const questionText = questionObjectInfo.questionText;
     const answersText = questionObjectInfo.answers;
-    const correctText = questionObjectInfo.correctAnswer;
+    // const correctText = questionObjectInfo.correctAnswer;
 
     chatDiv.textContent = questionText;
-    //set the answers on each button and add an event listener
+    //set the answers on each button and add an event listener with the chosen answer
     quizButtons.forEach((button, index) => {
       const optionKey = `option${index + 1}`;
       button.innerText = answersText[optionKey];
       button.addEventListener("click", (e) => {
         const selectedOption = e.target.getAttribute("data-quiz");
-        isAnswerCorrect(selectedOption);
+        isAnswerCorrect(selectedOption, e.target);
       });
     });
   }
@@ -388,13 +388,16 @@ const quiz = () => {
     return popCultureQuestions[questionNo];
   };
 
-  function isAnswerCorrect(selectedOption) {
+  function isAnswerCorrect(selectedOption, clickedButton) {
     console.log("Inside the isAnswerCorrect");
     console.log(selectedOption);
     console.log(questionNo);
+    console.log(clickedButton);
+
     let correctOption = popCultureQuestions[questionNo].correctAnswer;
     if (selectedOption === correctOption) {
       console.log("Answer is correct");
+      clickedButton.classList.add("green-btn");
       correctScore++;
     } else {
       console.log("Answer is false");
