@@ -26,6 +26,7 @@ const noGameControlsBtn = document.querySelector("#no");
 const gameChoiceBtns = document.querySelector("#game-choice-btns");
 const startQuizBtn = document.querySelector("#start-quiz");
 const nextQuestionBtn = document.querySelector("#next-question-quiz");
+const quizButtons = document.querySelectorAll("#quiz-question button");
 
 // creating emojis object list & urls for emojis
 const emojiObj = {
@@ -241,7 +242,6 @@ const quiz = () => {
   let correctScore = 0;
   let incorrectScore = 0;
   let questionNo = 0;
-  const quizButtons = document.querySelectorAll("#quiz-question button");
 
   // used to add and remove the event listeners from functions globally
   const answerButtonHandler = (e) => {
