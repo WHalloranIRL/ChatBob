@@ -377,6 +377,7 @@ const quiz = () => {
       questionObjectInfo = popCultureQuestions[questionNo];
     }
 
+    //get the values from the object stored in popCultureQuestions array from the given index number
     const questionText = questionObjectInfo.questionText;
     const answersText = questionObjectInfo.answers;
     //displaying the question
