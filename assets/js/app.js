@@ -364,6 +364,8 @@ const quiz = () => {
       },
       correctAnswer: "option4",
     },
+
+      //Quiz structure was taken and adapted from WebDev on Youtube
   ];
 
   function startQuiz() {
