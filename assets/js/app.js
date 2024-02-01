@@ -4,6 +4,7 @@ const chatSection = document.querySelector("#chat-section");
 const instructionSection = document.querySelector("#instruction-section");
 const gameSection = document.querySelector("#game-section");
 const controlsSection = document.querySelector("#controls-section");
+
 //selecting all the div elements in html
 const emojiDiv = document.querySelector("#emoji");
 const chatDiv = document.querySelector("#chat");
