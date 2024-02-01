@@ -458,9 +458,6 @@ const quiz = () => {
   };
 };
 
-const hilo = () => {
-  console.log("This is hilo");
-};
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
 const yesBtnClickHandler = () => {
