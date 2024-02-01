@@ -1,4 +1,4 @@
-Logo Image Here
+![Chatbob](assets/images/readme/chatbob.png)
 
 ## ChatBob Games
 
@@ -7,6 +7,39 @@ Logo Image Here
 This is a simple gaming site for users to have some fun, interacting and playing games with an emoji character called Bob. There will be jokes & games.
 
 ### Table of Contents
+
+- [ChatBob Games](#chatbob-games)
+  * [Project Description](#project-description)
+  * [Table of Contents](#table-of-contents)
+- [Roadmap](#roadmap)
+- [UX](#ux)
+  * [User Goal](#user-goal)
+  * [User Story](#user-story)
+  * [Owner Goals](#owner-goals)
+- [Design](#design)
+  * [Font](#font)
+  * [Colors](#colors)
+  * [Emoji](#emoji)
+  * [Structure](#structure)
+- [Wireframes](#wireframes)
+- [Features](#features)
+  * [Navigation](#navigation)
+  * [ChatBob](#chatbob)
+  * [Quiz](#quiz)
+  * [Jokes](#jokes)
+  * [Rock Paper Scissors](#rock-paper-scissors)
+- [Technologies](#technologies)
+  * [Language](#language)
+  * [Tools](#tools)
+  * [Frameworks & Libraries](#frameworks---libraries)
+- [Validation](#validation)
+- [Testing](#testing)
+- [Bugs](#bugs)
+- [Deployment](#deployment)
+  * [Steps to Deploy:](#steps-to-deploy-)
+- [Thank You / Credits](#thank-you---credits)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Roadmap
 
@@ -120,7 +153,11 @@ Using Figma I have created initially the mobile first look and feel then scaled 
 
 ## Validation
 
-- Validation here
+- Html validation 
+![HTML](assets/images/readme/htmlvalidation.png)
+
+- CSS validation 
+![CSS](assets/images/readme/cssvalidation.png)
 
 ## Testing
 
@@ -162,4 +199,7 @@ ChatBob can be easily deployed using GitHub Pages, which allows you to host stat
 [https://your-username.github.io/ChatBob/](https://your-username.github.io/ChatBob/)
 
 
-## Thank You
+## Thank You / Credits
+
+Youtube - WebDev
+- [Simen Daehlin](https://github.com/Eventyret) 
