@@ -365,7 +365,7 @@ const quiz = () => {
       correctAnswer: "option4",
     },
 
-      //Quiz structure was taken and adapted from WebDev on Youtube
+    //Quiz structure was taken and adapted from WebDev on Youtube
   ];
 
   function startQuiz() {
@@ -414,7 +414,6 @@ const quiz = () => {
       console.log("Answer is correct");
       clickedButton.classList.add("green-btn");
       correctScore++;
-      console.log(questionNo);
     } else {
       console.log("Answer is false");
       clickedButton.classList.add("red-btn");
@@ -427,6 +426,7 @@ const quiz = () => {
     });
 
     questionNo++;
+    console.log("This is the" + questionNo);
     nextQuestionBtn.classList.remove("hide");
     nextQuestionBtn.addEventListener("click", nextQuestion);
   };
@@ -461,7 +461,6 @@ const quiz = () => {
     //controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
   };
 };
-
 
 // create a event lisnter fucntion that uses a switch statement to determin which fucntion to run
 const yesBtnClickHandler = () => {
