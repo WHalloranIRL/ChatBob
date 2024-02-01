@@ -214,9 +214,9 @@ const rps = () => {
 
     // Check who has the higher score and display the outcome
     if (playerScore > bobScore) {
-      outcomeElement.textContent = `Game Over! You win ${playerScore} : ${bobScore} - Congrats`;
+      outcomeElement.textContent = `Game Over! You win ${playerScore} : ${bobScore} - Congrats. Would you like to play again ?`;
     } else {
-      outcomeElement.textContent = `Game Over! Bob wins ${bobScore} : ${playerScore} - Better luck next time`;
+      outcomeElement.textContent = `Game Over! Bob wins ${bobScore} : ${playerScore} - Better luck next time. Would you like to play again ?`;
     }
 
     // Reset the scores
@@ -426,7 +426,6 @@ const quiz = () => {
     });
 
     questionNo++;
-    console.log("This is the" + questionNo);
     nextQuestionBtn.classList.remove("hide");
     nextQuestionBtn.addEventListener("click", nextQuestion);
   };
@@ -458,7 +457,7 @@ const quiz = () => {
     startQuizBtn.removeEventListener("click", startQuiz);
     quizQuestionDiv.classList.add("hide");
     nextQuestionBtn.classList.add("hide");
-    //controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
+    chatDiv.textContent = "Thanks for playing that was really good fun ! I Hope you enjoyed it";
   };
 };
 
