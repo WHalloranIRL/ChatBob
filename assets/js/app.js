@@ -414,6 +414,7 @@ const quiz = () => {
       console.log("Answer is correct");
       clickedButton.classList.add("green-btn");
       correctScore++;
+      console.log(questionNo);
     } else {
       console.log("Answer is false");
       clickedButton.classList.add("red-btn");
@@ -457,7 +458,7 @@ const quiz = () => {
     startQuizBtn.removeEventListener("click", startQuiz);
     quizQuestionDiv.classList.add("hide");
     nextQuestionBtn.classList.add("hide");
-    controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
+    //controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
   };
 };
 
