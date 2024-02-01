@@ -457,6 +457,7 @@ const quiz = () => {
     startQuizBtn.removeEventListener("click", startQuiz);
     quizQuestionDiv.classList.add("hide");
     nextQuestionBtn.classList.add("hide");
+    controlsDiv.innerHTML = `<button onClick="window.location.reload();" class="green-btn">Start Over</button>`;
   };
 };
 
