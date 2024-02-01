@@ -100,10 +100,5 @@ const popCultureQuestions = [
       correctAnswer: "option4",
     },
   ];
-  
-  // Example usage:
-  console.log(popCultureQuestions[0].questionText);
-  console.log(popCultureQuestions[1].answers.option3);
-  console.log(popCultureQuestions[2].correctAnswer);
-  // Continue as needed for the other questions...
-  
+
+  //Quiz structed was taken and adapted from WebDev on Youtube
