@@ -16,6 +16,7 @@ const quizDiv = document.querySelector("#quiz");
 const resultDiv = document.querySelector("#result");
 const quizQuestionDiv = document.querySelector("#quiz-question");
 const quizScores = document.querySelector("#quiz-scores");
+const restartDiv = document.querySelector("#game-restart-btns");
 //selecting the user input fields
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -28,6 +29,8 @@ const gameChoiceBtns = document.querySelector("#game-choice-btns");
 const startQuizBtn = document.querySelector("#start-quiz");
 const nextQuestionBtn = document.querySelector("#next-question-quiz");
 const quizButtons = document.querySelectorAll("#quiz-question button");
+const restartBtn = document.querySelector("#restart");
+const quitBtn = document.querySelector("#quit");
 
 // creating emojis object list & urls for emojis
 const emojiObj = {
