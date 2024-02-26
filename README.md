@@ -105,7 +105,7 @@ I am choosing JS to help create the page based on user interaction and hide/show
 
 Using Figma I have created initially the mobile first look and feel then scaled based on larger screen requirements. As Bob updates via javascript the page will not change and the basic structure reamains the same.
 
-![Wireframe](assets/images/readme/wireframe.png
+![Wireframe](assets/images/readme/wireframe.png)
 
 ## Features
 
