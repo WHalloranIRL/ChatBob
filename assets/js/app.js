@@ -101,7 +101,6 @@ const gameYes = () => {
 
   rpsBtn.addEventListener("click", rps);
   quizBtn.addEventListener("click", quiz);
-  hiloBtn.addEventListener("click", hilo);
 };
 
 // random joke generator
