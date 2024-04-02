@@ -1,14 +1,11 @@
 /*jshint esversion: 6 */
 
 // selecting all the section elements in html
-const emojiSection = document.querySelector("#emoji-section");
-const chatSection = document.querySelector("#chat-section");
 const instructionSection = document.querySelector("#instruction-section");
 const gameSection = document.querySelector("#game-section");
 const controlsSection = document.querySelector("#controls-section");
 
 //selecting all the div elements in html
-const emojiDiv = document.querySelector("#emoji");
 const chatDiv = document.querySelector("#chat");
 const instructionsDiv = document.querySelector("#instructions");
 const gameDiv = document.querySelector("#game");
@@ -18,7 +15,6 @@ const quizDiv = document.querySelector("#quiz");
 const resultDiv = document.querySelector("#result");
 const quizQuestionDiv = document.querySelector("#quiz-question");
 const quizScores = document.querySelector("#quiz-scores");
-const restartDiv = document.querySelector("#game-restart-btns");
 //selecting the user input fields
 const userNameInput = document.querySelector("#user-name-input");
 const userInputBtn = document.querySelector("#user-input-btn");
@@ -31,8 +27,6 @@ const gameChoiceBtns = document.querySelector("#game-choice-btns");
 const startQuizBtn = document.querySelector("#start-quiz");
 const nextQuestionBtn = document.querySelector("#next-question-quiz");
 const quizButtons = document.querySelectorAll("#quiz-question button");
-const restartBtn = document.querySelector("#restart");
-const quitBtn = document.querySelector("#quit");
 
 // creating emojis object list & urls for emojis
 const emojiObj = {
@@ -97,7 +91,6 @@ const gameYes = () => {
   controlsDiv.classList.add("hide");
   const rpsBtn = document.querySelector("#rpsBtn");
   const quizBtn = document.querySelector("#quizBtn");
-  const hiloBtn = document.querySelector("#hiloBtn");
 
   yesGameControlsBtn.removeEventListener("click", yesBtnClickHandler);
 
