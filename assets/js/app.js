@@ -158,10 +158,8 @@ const rps = () => {
 
     if (result === "You win!") {
       playerScore++;
-      console.log("playGame Player" + playerScore);
     } else if (result === "Bob wins!") {
       bobScore++;
-      console.log("playGame Bob" + bobScore);
     }
 
     // Check if either player or Bob has reached a score of 10
@@ -197,12 +195,9 @@ const rps = () => {
   const updateScores = () => {
     playerScoreP.textContent = playerScore;
     bobScoreP.textContent = bobScore;
-    console.log(`updateScores Player score ${playerScore}`);
-    console.log(`updateScores Bob score ${bobScore}`);
   };
 
   const endGame = () => {
-    console.log("Game Over");
     rpsDiv.classList.add("hide");
     controlsDiv.classList.remove("hide");
     noGameControlsBtn.setAttribute("data-function", "joke-no");
@@ -219,9 +214,6 @@ const rps = () => {
     // Reset the scores
     playerScore = 0;
     bobScore = 0;
-
-    console.log("Endgame " + playerScore);
-    console.log("Endgame " + bobScore);
 
     playerScoreP.textContent = playerScore;
     bobScoreP.textContent = bobScore;
@@ -409,11 +401,9 @@ const quiz = () => {
     let correctOption = popCultureQuestions[questionNo].correctAnswer;
     //determin if the answer is right or wrong
     if (selectedOption === correctOption) {
-      console.log("Answer is correct");
       clickedButton.classList.add("green-btn");
       correctScore++;
     } else {
-      console.log("Answer is false");
       clickedButton.classList.add("red-btn");
       incorrectScore++;
     }
@@ -442,7 +432,6 @@ const quiz = () => {
       button.classList.remove("green-btn", "red-btn");
     });
     if (questionNo === 10) {
-      console.log("Game Over");
       updateScores();
       endQuiz();
     } else {
@@ -474,7 +463,6 @@ const yesBtnClickHandler = () => {
       rps();
       break;
     default:
-      console.log("Do nothing");
   }
 };
 
@@ -489,7 +477,6 @@ noGameControlsBtn.addEventListener("click", function () {
       noJoke();
       break;
     default:
-      console.log("Do nothing");
   }
 });
 
