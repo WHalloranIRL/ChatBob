@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // selecting all the section elements in html
 const emojiSection = document.querySelector("#emoji-section");
 const chatSection = document.querySelector("#chat-section");
@@ -245,6 +247,7 @@ const quiz = () => {
   let correctScore = 0;
   let incorrectScore = 0;
   let questionNo = 0;
+  let questionObjectInfo;
 
   // used to add and remove the event listeners from functions globally
   const answerButtonHandler = (e) => {
